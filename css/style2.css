@@ -1,0 +1,73 @@
+html, body, #map { width: 100%; height: 100%; margin: 0; background: #fff; }
+.info-panel {
+    line-height: 16px;
+    width: 20%;
+    height: auto;
+    position: relative;
+    z-index: 1000;
+    left: 18px;
+    top: 70px;
+    bottom: 18px;
+    color: #070707;
+    padding: 6px 8px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.info-panel2 {
+    line-height: 16px;
+    width: 30%;
+    height: 70%;
+    position: absolute;
+    z-index: 1000;
+    right: 18px;
+    top: 70px;
+    bottom: 18px;
+    color: #070707;
+    padding: 6px 8px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+
+}
+li {
+    font-family: 'Francois One', sans-serif;
+    font-size: 19px;
+    padding-right: 15px;
+}
+
+h4 {
+    font-family: 'Francois One', sans-serif;
+}
+
+h3 {
+    font-family: 'Francois One', sans-serif;
+}
+
+h2 {
+    font-family: 'Francois One', sans-serif;
+}
+
+.infobox {
+    font-size: 14px;
+}
+
+.statelist {
+    font-family: 'Francois One', sans-serif;
+    font-size: 16px;
+}
+
+.info-panel i {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+.info-panel p {
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0;
+}

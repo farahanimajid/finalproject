@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>InterACTWEL</title>
+    <!--add required stylesheet-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- this version of bootstrap was added to reed glyphIcon -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="all" href="css/style1.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/chartstyle1.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/style2.css" />
+
+
+    <style>
+
+    </style>
+    <!--add required stylesheets-->
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/rbush@2.0.1/rbush.min.js"></script>
+    <script src="https://unpkg.com/labelgun@6.0.0/lib/labelgun.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.4.4/proj4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.4/chroma.min.js"></script>
+    <script type="text/javascript" src="https://cloudybay.github.io/leaflet.latlng-graticule/leaflet.latlng-graticule.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!--mini globle map-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
+    <script src="js/globeminimap.js"></script>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+
+<!--add a Bootstrap navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <!--<div class="container-fluid">-->
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+
+    <a class="navbar-brand" href="#">
+        <!--convert the style value to a class and then add the class to the css file.-->
+        <img src="img/logo.png"  alt="" width="10%"  class="d-inline-block align-top">
+        <font color="orange"><b>InterACTWEL</b></font>
+    </a>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse">
+        <!--Create class ml-auto for the navbar items you want on the right.-->
+        <ul class="navbar-nav ml-auto" >
+            <!--a simple top bar link-->
+            <li class="nav-item">
+                <a class="nav-link" href="https://farahanimajid.github.io/InterACTWEL/index.html" target="_blank">InterACTWEL</a>
+            </li>
+            <!--a top bar link which opens the url in a new page-->
+            <!--<li class="nav-item">-->
+                <!--<a class="nav-link" href="#" target="_blank">Topic 2</a>-->
+            <!--</li>-->
+            <!--a drop-down menu-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" >Share To...</a>
+                <div class="dropdown-menu" >
+                    <!--use font awesome icons-->
+                    <a class="dropdown-item" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fgithub.com%2Fmajidrezafarahani"> <i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a class="dropdown-item" href="https://github.com/majidrezafarahani"> <i class="fab fa-github"></i> Github</a>
+                    <a class="dropdown-item" href="#"> <i class="fa fa-link"></i> Short Url </a>
+                </div>
+            </li>
+
+            <!--use icons in the top bar menu-->
+            <li>
+                <a class="nav-link" href="https://github.com/farahanimajid/finalproject/blob/master/index.html"> <i class="fab fa-github-square"></i>&nbsp;&nbsp;<span>Source Codes</span></a>
+            </li>
+            <!--an about page which open the url in a new page-->
+            <li>
+                <a class= "nav-link" href="about.html" target="_self">About</a>
+            </li>
+        </ul>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--map container-->
+<div id="map" class="map">
+    <!--Side Panel-->
+    <div class="info-panel">
+        <p><b>Click on icons or farms on the map to see all possible actions.</b></p><br/>
+        <p style="font-style: italic">*  <a target="_blank" href="https://farahanimajid.github.io/InterACTWEL/index.html"><u>InterACTWEL</u></a></p>
+        <hr>
+        <h4>Actions</h4>
+        <hr>
+
+        <!--/////////////////////////////////////////////////////////////////////-->
+        <!--/////////////////////////////////////////////////////////////////////-->
+        <!--  Farmers w/ SW & GW -->
+        <div class="panelpanel-default" id="FarmerswSWGW1">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+
+                    <a data-toggle="collapse" href="#collapse1">Farmers with SurfaceWater & GroundWater</a>
+                </h4>
+            </div>
+            <div id="FarmerswSWGW" class="panel-collapse collapse">
+
+
+                <div class="form-check" style="text-align: left">
+                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck1">
+                    <span class="checkmark"></span>
+                    <label class="form-check-label" for="defaultCheck1">
+                        Change Crops
+                    </label>
+                </div>
+                <br>
+                <div class="form-check" style="text-align: left">
+                    <input class="form-check-input" type="checkbox" value="2" id="defaultCheck2">
+                    <span class="checkmark"></span>
+                    <label class="form-check-label" for="defaultCheck2">
+                        Change GroundWater Amount
+                    </label>
+                </div>
+                <br>
+                <div class="form-check" style="text-align: left">
+                    <input class="form-check-input" type="checkbox" value="3" id="defaultCheck3">
+                    <span class="checkmark"></span>
+                    <label class="form-check-label" for="defaultCheck3">
+                        Replace GroundWater with SurfaceWater
+                    </label>
+                </div>
+                <br>
+                <div class="form-check" style="text-align: left">
+                    <input class="form-check-input" type="checkbox" value="4" id="defaultCheck4">
+                    <span class="checkmark"></span>
+                    <label class="form-check-label" for="defaultCheck4">
+                        Change GroundWater Amount
+                    </label>
+                </div>
+                <br>
+                <div class="form-check" style="text-align: left">
+                    <input class="form-check-input" type="checkbox" value="5" id="defaultCheck5">
+                    <span class="checkmark"></span>
+                    <label class="form-check-label" for="defaultCheck5">
+                        Increase Surface Storage
+                    </label>
+                </div>
+                <br>
+                <p><b><span class="execute" id="execute1"> Execute  </span>   <span class="clear" id="clear1"> Clear  </span> </b></p>
+            </div>
+        </div>
+
+        <!--  DataCenters -->
+        <div class="panelpanel-default" id="DataCenters1">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+
+                    <a data-toggle="collapse" href="#collapse1" >Data Centers</a>
+                </h4>
+            </div>
+            <div id="DataCenters" class="panel-collapse collapse" style="text-align: left">
+
+
+                <div class="form-check" style="text-align: left">
+                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck6">
+                    <span class="checkmark"></span>
+                    <label class="form-check-label" for="defaultCheck6">
+                        Pump WastWater to Farm
+                    </label>
+                </div>
+                <br>
+                <div class="form-check" style="text-align: left">
+                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck7">
+                    <span class="checkmark"></span>
+                    <label class="form-check-label" for="defaultCheck7">
+                        Treat & Dispose WastWater
+                    </label>
+                </div>
+                <br>
+                <div class="form-check" style="text-align: left">
+                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck8">
+                    <span class="checkmark"></span>
+                    <label class="form-check-label" for="defaultCheck8">
+                        Increase Surface Storage
+                    </label>
+                </div>
+                <br>
+                <div class="form-check" style="text-align: left">
+                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck9">
+                    <span class="checkmark"></span>
+                    <label class="form-check-label" for="defaultCheck9">
+                        Invest in Renewable Energy
+                    </label>
+                </div>
+                <br>
+
+                <p><b><span class="execute" id="execute2"> Execute  </span>   <span class="clear" id="clear2"> Clear  </span> </b></p>
+
+            </div>
+        </div>
+
+
+
+        <!--  Energy(Cooperative) -->
+        <div class="panelpanel-default" id="EnergyCooperative1">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+
+                    <a data-toggle="collapse" href="#collapse1">Energy Cooperative</a>
+                </h4>
+            </div>
+            <div id="EnergyCooperative" class="panel-collapse collapse">
+
+
+                <div class="form-check" style="text-align: left">
+                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck10">
+                    <span class="checkmark"></span>
+                    <label class="form-check-label" for="defaultCheck10">
+                        Expand Facilities
+                    </label>
+                </div>
+                <br>
+                <div class="form-check" style="text-align: left">
+                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck11">
+                    <span class="checkmark"></span>
+                    <label class="form-check-label" for="defaultCheck11">
+                        Solar panel
+                    </label>
+                </div>
+                <br>
+                <div class="form-check" style="text-align: left">
+                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck12">
+                    <span class="checkmark"></span>
+                    <label class="form-check-label" for="defaultCheck12">
+                        Wind turbine
+                    </label>
+                </div>
+                <br>
+                <div class="form-check" style="text-align: left">
+                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck13">
+                    <span class="checkmark"></span>
+                    <label class="form-check-label" for="defaultCheck13">
+                        Other Energy Sources
+                    </label>
+                </div>
+                <br>
+
+                <p><b><span class="execute" id="execute3"> Execute  </span>   <span class="clear" id="clear3"> Clear  </span> </b></p>
+
+            </div>
+        </div>
+
+
+        <!--  FoodProcessors -->
+        <div class="panelpanel-default" id="FoodProcessors1">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+
+                    <a data-toggle="collapse" href="#collapse1">Food Processors</a>
+                </h4>
+            </div>
+            <div id="FoodProcessors" class="panel-collapse collapse">
+
+                <div class="form-check" style="text-align: left">
+                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck14">
+                    <span class="checkmark"></span>
+                    <label class="form-check-label" for="defaultCheck14">
+                        Pump WasteWater to Grower
+                    </label>
+                </div>
+                <br>
+                <div class="form-check" style="text-align: left">
+                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck15">
+                    <span class="checkmark"></span>
+                    <label class="form-check-label" for="defaultCheck15">
+                        Treat & Dispose WasteWater
+                    </label>
+                </div>
+                <br>
+                <div class="form-check" style="text-align: left">
+                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck16">
+                    <span class="checkmark"></span>
+                    <label class="form-check-label" for="defaultCheck16">
+                        Increase Surface Storage
+                    </label>
+                </div>
+                <br>
+
+
+                <p><b><span class="execute" id="execute4"> Execute  </span>   <span class="clear" id="clear4"> Clear  </span> </b></p>
+            </div>
+        </div>
+
+        <!--/////////////////////////////////////////////////////////////////////-->
+        <!--/////////////////////////////////////////////////////////////////////-->
+
+
+        <hr>
+        <h6>Credits</h6>
+        <!--<p> BaseMap: CartoDB | <a href="about.html"><u>Web Map Library</u> |</a></p>-->
+        <p> Created By: <a href="https://github.com/farahanimajid"><u>Majid Farahani</u></a>, <a href="https://github.com/HodaTahami"><u>Hoda Tahami</u></a></p>
+
+    </div>
+    <!--Side Panel 2-->
+    <div class="info-panel2" id="panel2">
+        <p><b>Select different actors to see the impact of your decision on them</b></p><hr/>
+        <div>
+            <div  style="width: 100%; font-size: 8px; ">
+                <button class="btn btn-default" type="button" id="impfarm" style="font-size: 13px" >Farmers</button>
+                <button class="btn btn-default" type="button" id="impenrgy" style="font-size: 13px">Energy</button>
+                <button class="btn btn-default" type="button" id="impdc" style="font-size: 13px">DataCenter</button>
+                <button class="btn btn-default" type="button" id="impfp" style="font-size: 13px">Food Processor</button>
+            </div>
+            <div id="emptyspace1" style="width:100%; height: 10px;"></div>
+
+            <div id="chart_div1" style="width:100%; height: 20%; background-color: rgba(85,44,0,0.19) ">
+                <div id="chart1"></div>
+                <script type="text/javascript" src="js/barchart1.js"></script>
+                <div id="chart2"></div>
+                <script type="text/javascript" src="js/barchart2.js"></script>
+                <div id="chart3"></div>
+                <script type="text/javascript" src="js/barchart3.js"></script>
+                <div id="chart4"></div>
+                <script type="text/javascript" src="js/barchart4.js"></script>
+                <div id="chart5"></div>
+                <script type="text/javascript" src="js/barchart5.js"></script>
+                <div id="chart6"></div>
+                <script type="text/javascript" src="js/barchart6.js"></script>
+                <div id="chart7"></div>
+                <script type="text/javascript" src="js/barchart7.js"></script>
+                <div id="chart8"></div>
+                <script type="text/javascript" src="js/barchart8.js"></script>
+                <div id="chart9"></div>
+                <script type="text/javascript" src="js/barchart9.js"></script>
+                <div id="chart10"></div>
+                <script type="text/javascript" src="js/barchart10.js"></script>
+                <div id="chart11"></div>
+                <script type="text/javascript" src="js/barchart11.js"></script>
+                <div id="chart12"></div>
+                <script type="text/javascript" src="js/barchart12.js"></script>
+                <div id="chart13"></div>
+                <script type="text/javascript" src="js/barchart13.js"></script>
+                <div id="chart14"></div>
+                <script type="text/javascript" src="js/barchart14.js"></script>
+                <div id="chart15"></div>
+                <script type="text/javascript" src="js/barchart15.js"></script>
+            </div>
+
+            <div id="emptyspace2" style="width:100%; height: 10px;"></div>
+
+            <div id="chart_div2" style="width:100%; height: 20%; background-color: rgba(85,44,0,0.19) ">
+
+
+            </div>
+
+            <div id="emptyspace3" style="width:100%; height: 10px;"></div>
+
+            <div id="chart_div3" style="width:100%; height: 20%; background-color: rgba(85,44,0,0.19) ">
+
+
+            </div>
+
+            <div id="emptyspace4" style="width:100%; height: 10px;"></div>
+
+
+        </div>
+
+    </div>
+
+
+</div>
+<script src="js/map.js"></script>
+<!--<script type="text/javascript">-->
+    <!--var map = L.map("map", {zoomControl: false}).setView([40, -100], 5); // deactivate the zoomControl-->
+    <!--// construct a base map in light color.md.-->
+    <!--L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png').addTo(map);-->
+<!--</script>-->
+<script>
+    $("#FoodProcessors1").hide();
+    $("#EnergyCooperative1").hide();
+    $("#DataCenters1").hide();
+    $("#FarmerswSWGW1").hide();
+    $("#panel2").hide();
+    $("#chart1").hide();
+    $("#chart2").hide();
+    $("#chart3").hide();
+    $("#chart4").hide();
+    $("#chart5").hide();
+    $("#chart6").hide();
+    $("#chart7").hide();
+    $("#chart8").hide();
+    $("#chart9").hide();
+    $("#chart10").hide();
+    $("#chart11").hide();
+    $("#chart12").hide();
+    $("#chart13").hide();
+    $("#chart14").hide();
+    $("#chart15").hide();
+
+    $("#clear").on("click", function(){
+         (checkboxes[0].unchecked)
+
+
+    })
+
+
+
+
+
+
+
+
+
+</script>
+<script src="js/selectchart.js"></script>
+</body>
+</html>
