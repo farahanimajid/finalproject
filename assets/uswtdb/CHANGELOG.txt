@@ -1,0 +1,52 @@
+# Changelog
+
+## [1.0.0] - 2018-04-19
+
+- First public release of USWTDB. Changelog for 1.0.0 reflects differences between USWTDB and USGS turbine database/windFarm application (2014).
+
+### Added
+
+- Addition of 14,693 turbine records.
+- Dedicated home, data, partner, and help landing pages.
+- Additional USWTDB fields include "case_id", "faa_asn", "t_fips", "t_img_date".
+- Added end-user web application capabilities including:
+	- Dynamic filtering and turbine statistic computation.
+	- Data-driven styling.
+	- Dynamic project information table.
+	- Enhanced project search (with auto-complete).
+	- Temporal animation controls.
+	- Enhanced navigation (pitch and bearing controls).
+	- Enhanced geocoder (with auto-complete).
+	- Enhanced geolocation controls.
+	- Extended turbine-level pop-up information.
+
+### Changed
+
+- Migrated legacy windFarm web application platform (Flash to JavaScript).
+- Migrated geospatial service endpoints.
+- USWTDB fields changed include:
+	"unique_id" > "usgs_pr_id",
+	"site_name" > "p_name",
+	"total_turb" > "p_tnum",
+	"on_year_s" > "p_year",
+	"manufac" > "t_manu",
+	"model" > "t_model",
+	"MW_turbine" > "t_cap",
+	"total_cpcy" > "p_cap",
+	"total_ht" > "t_ttlh",
+	"tower_h" > "t_hh",
+	"rotor_dia" > "t_rd",
+	"rotor_s_a" > "t_rsa",
+	"usgs_ydd" > "ylat",
+	"usgs_xdd" > "xlong",
+	"state" > "t_state",
+	"county" > "t_county",
+	"conf_attr" > "t_conf_atr",
+	"conf_loc" > "t_conf_loc",
+	"FAA_ORS" > "faa_ors",
+	"image_name" > "t_img_srce".
+
+### Removed
+
+- Removed 5,992 turbine records (decommissioned or reclassified as "not a turbine").
+- USWTDB fields removed include "year_range", "on_year_s", "type_tower", "decommiss", "blade_l", "WENDI_name", "EIA_name", "FAA_jdate", "FAA_AGL", "image_year", "comments", "FID".
